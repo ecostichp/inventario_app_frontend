@@ -1,12 +1,4 @@
-{% extends 'base/base.html' %}
 
-{% block base %}
-  <style>
-    main {
-      margin-left: 0;
-    }
-  </style>
-    
   
   <div class="position-absolute align-self-center" style="top: 5%">
     {% with messages = get_flashed_messages(with_categories=true) %}
