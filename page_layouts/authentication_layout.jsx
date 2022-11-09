@@ -1,6 +1,10 @@
 
+export default function LoginFlask (){
   
-  <div class="position-absolute align-self-center" style="top: 5%">
+  return(
+
+    <>
+    <div class="position-absolute align-self-center" style="top: 5%">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for mensaje in messages %}
@@ -43,6 +47,13 @@
       <p class="mt-5 mb-3 text-muted">&reg; La Casa Del Carpintero</p>
     </form>
   </div>
+    </>
+
+  )
+}  
+  
 
 
-{% endblock base %}
+
+
+

@@ -58,9 +58,7 @@ export default function Home( {data, error} ) {
       </Form>
     </div>
 
-    <div>
-      <h1>{data.wep}</h1>
-    </div>
+   
  
     </main>
   )
