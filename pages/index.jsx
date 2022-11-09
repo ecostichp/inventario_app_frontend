@@ -2,31 +2,48 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
+import axios from 'axios'
 
-
-export default function Home( { }) {
+export default function Home( {data, error} ) {
   
   
   const [usuario, setUsuario] = useState()
   const [contraseña, setContarseña] = useState()
  
-
-  useEffect (() => {
+  
+  useEffect ( () => {
 
   })
 
 
-  const click_submit = (e) => {
+  const click_submit = async e => {
     e.preventDefault()
-    console.log(e.target.login_usuario.value)
-    console.log(e.target.login_contraseña.value)
-  } 
+    e.stopPropagation()
+
+    const endpoint ='/login/'
+
+    try {
+      const res = await axios.post(process.env.NEXT_PUBLIC_API+endpoint,
+      {
+        usuario : e.target.login_usuario.value,
+        contraseña : e.target.login_contraseña.value
+      })
+      console.log(res)
+    } 
+    catch (error) {
+      console.log (error)
+    }
+    
+
+
+  }
+  
+
 
   return (
     
     <main style={{display:"flex", justifyContent: "center"}}>
       
-    
     <div>
       <Form onSubmit={click_submit}>
 
@@ -40,7 +57,27 @@ export default function Home( { }) {
         <Button className="m-3" variant="primary" type='submit'>Entrar</Button>
       </Form>
     </div>
+
+    <div>
+      <h1>{data.wep}</h1>
+    </div>
  
     </main>
   )
+
+}
+
+Home.getInitialProps = async ctx => {
+  
+  const endpoint ='/'
+
+  try {
+    const res = await axios.get(process.env.NEXT_PUBLIC_API+endpoint)
+    const data = res.data
+    return {data}
+  } 
+  catch (error) {
+    return {error}
+  }
+  
 }
