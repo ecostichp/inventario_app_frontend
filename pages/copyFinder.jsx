@@ -21,8 +21,8 @@ export default function LoginFinder () {
     
     
     return(
-        <div className='container-fluid d-flex h-100 align-items-center justify-content-center py-4 py-sm-5 position-absolute top-50 start-50 translate-middle' style={{backgroundColor: "#e8e8e8"}} >
-        <div className='card card-body rounded-5' style={{maxWidth: '940px', borderColor: "#ced4da"}}> 
+        <div className='container-fluid d-flex h-100 align-items-center justify-content-center py-4 py-sm-5 position-absolute top-50 start-50 translate-middle' style={{backgroundColor: "#f1f1f1"}} >
+        <div className='card card-body rounded-5' style={{maxWidth: '940px', boxShadow: "0px 0px 15px #adb5bd"}}> 
             <div className='row mx-0 align-items-center '>
               <div className='col-md-6 border-end-md p-2 p-sm-5'>
                   <h2 className='h3 mb-4 mb-sm-5 text-center'>Bienvenido<br />Inventario San José 2022</h2>
