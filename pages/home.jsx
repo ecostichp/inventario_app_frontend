@@ -1,33 +1,36 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import HeaderNav from '../page_layouts/HeaderNav';
 import FooterNav from '../page_layouts/FooterNav';
+import Buscador from '../components/Buscador'
 
 
 export default function Home () {
     
     
   return(
-    <div className= "d-flex row" style={{height: "500px", backgroundColor:"lightblue"}}>
-      <header>
-        <HeaderNav />
+    <div>
+      <header style={{ position:"sticky", top:"0" }}>
+        <div>
+          <HeaderNav />
+          <Buscador />
+        </div>
+          
       </header>
-      
-      <main className="flex-grow-1" style={{backgroundColor:"lightgrey"}}>
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Buscar"
-            className="me-2"
-            aria-label="Search"
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
+
+      <main>
+        <div>      
+          <div className='text-center' style={{ height: "1000px", backgroundColor:"lightblue" }}>
+            <h1>Tabla</h1>
+          </div>
+        </div>
       </main>
-      
-      <footer>
-        <FooterNav />
+
+      <footer style={{ position:"fixed", bottom:"0" }}>
+        <div>
+          <FooterNav />
+        </div>
       </footer>
+
     </div>
+
   )
 }

@@ -1,7 +1,6 @@
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
-import Link from 'next/link'
 import PasswordToggle from '../components/PasswordToggle'
 import { useState } from 'react';
 

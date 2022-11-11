@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 export default function FooterNav () {
         
     return(
-        <Nav  className='justify-content-center' style={{border: "1px solid"}}>
+        <Nav style={{width:"100vw",  border: "1px solid", justifyContent:"space-around", fontSize:"1.25rem"}}>
             <Nav.Item>
                 <Nav.Link href="/home"><i className="bi bi-house-fill"></i></Nav.Link>
             </Nav.Item>
