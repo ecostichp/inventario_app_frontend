@@ -1,11 +1,9 @@
-import { Card } from 'react-bootstrap';
-import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
 
 
 
@@ -14,9 +12,14 @@ export default function TableConteo () {
     
     return(
         <>
-      <div className='position-absolute' style={{ top: '10px', right: '10px' }}>
-				<Image src='None.png' alt='Foto'  style={{width:" 100px ", height:" 100px"}}/>
+      <Navbar className='justify-content-end' style={{backgroundColor: "Steelblue"}}>
+     
+      <div className='d-block rounded-circle overflow-hidden' style={{marginRight: "10px"}} >
+				<Image src='None.png' alt='Foto'  style={{width:" 32px ", height:" 32px"}}/>
       </div>
+     
+
+      </Navbar>
 				
 		
 
@@ -47,7 +50,6 @@ export default function TableConteo () {
 
     )
 }
-
 
 
 
