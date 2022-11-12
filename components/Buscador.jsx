@@ -6,14 +6,24 @@ export default function TableConteo () {
     
     
     return(
-      <div className='justify-content-center align-items-center'style={{ height:"20vh", padding: "10%", backgroundColor:"lightgrey"}}>
+      <div className="d-flex align-items-center"
+      style={{
+        padding:"5%", 
+        position: "sticky",
+        top: "42px",
+        left: "0px",
+        right: "0px",
+        backgroundColor: "white",
+        justifyContent: "center"
+      }}>
+      
           <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Buscar"
               aria-label="Search"
               />
-              <Button variant="outline-success">Buscar</Button>
+              <Button className='ms-2' variant="outline-success">Buscar</Button>
             </Form>
           </div>
 

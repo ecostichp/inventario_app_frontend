@@ -7,28 +7,20 @@ export default function Home () {
     
     
   return(
-    <div>
-      <header style={{ position:"sticky", top:"0" }}>
-        <div>
-          <HeaderNav />
-          <Buscador />
-        </div>
-          
-      </header>
-
-      <main>
-        <div>      
-          <div className='text-center' style={{ height: "1000px", backgroundColor:"lightblue" }}>
-            <h1>Tabla</h1>
-          </div>
-        </div>
+    <div  style={{backgroundColor: "#f1f1f1"}}>
+      <HeaderNav />
+      
+      <main className="justify-content-center" 
+        style={{
+          backgroundColor:"white", 
+        }}>
+      <Buscador />
+      <div style={{height: "1000px", backgroundColor:"steelblue", boxShadow: "0px 0px 15px #adb5bd"}}>
+        <h1>Tabla</h1>
+      </div>
       </main>
-
-      <footer style={{ position:"fixed", bottom:"0" }}>
-        <div>
-          <FooterNav />
-        </div>
-      </footer>
+      
+      <FooterNav />
 
     </div>
 
