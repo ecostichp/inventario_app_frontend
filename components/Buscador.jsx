@@ -23,7 +23,7 @@ export default function TableConteo () {
               placeholder="Buscar"
               aria-label="Search"
               />
-              <Button className='ms-2' variant="outline-success">Buscar</Button>
+              <Button className='ms-2' variant="outline-primary">Buscar</Button>
             </Form>
           </div>
 

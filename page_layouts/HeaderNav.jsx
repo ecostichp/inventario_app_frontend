@@ -5,7 +5,7 @@ export default function HeaderNav () {
       
       <div className="d-flex align-items-center" 
         style={{
-          backgroundColor:"red", 
+          backgroundColor:"#D50909", 
           position: "sticky",
           top: "0px",
           left: "0px",
@@ -20,7 +20,7 @@ export default function HeaderNav () {
 
         <div className="d-flex position-absolute end-0 me-2">
           <div className="me-2">
-            <div className= "" style={{fontSize: ".5rem"}}>
+            <div className= "text-center" style={{fontSize: ".5rem"}}>
             Eq 1
             </div>
             <div style={{fontSize: ".75rem"}}>
