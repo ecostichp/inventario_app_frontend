@@ -2,30 +2,37 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-export default function TableConteo () {
+export default function Buscador () {
     
     
     return(
-      <div className="d-flex align-items-center"
+      <div className="d-flex align-items-center my-3"
       style={{
-        padding:"5%", 
         position: "sticky",
         top: "42px",
         left: "0px",
         right: "0px",
         backgroundColor: "white",
-        justifyContent: "center"
+        justifyContent: "center",
+
       }}>
       
           <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              aria-label="Search"
-              />
-              <Button className='ms-2' variant="outline-primary">Buscar</Button>
-            </Form>
-          </div>
+          
+            <Form.Group>
+              <Form.Control type="number" placeholder="Código" aria-label="Search" style={{ fontSize: "0.85rem", width:"75px"}}/>
+            </Form.Group>
+          
+            <Form.Group className='ms-2'>
+              <Form.Control type="search" placeholder="Descripción" aria-label="Search" style={{ fontSize: "0.85rem"}}/>
+            </Form.Group>
+          
+              
+            <Button className='ms-2' variant="outline-primary" style={{ fontSize: "0.85rem"}}>Buscar</Button>
+            
+          </Form>
+        
+      </div>
 
     )
 } 

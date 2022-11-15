@@ -1,17 +1,30 @@
 import HeaderNav from '../page_layouts/HeaderNav';
 import FooterNav from '../page_layouts/FooterNav';
+import Buscador from '../components/Buscador';
+import TableProductos from '../components/TableProductos';
 import axios from 'axios'
 
 
-export default function Home ( {data, error} ) {
+export default function Buscar () {
     
     
   return(
-    <div >
+    <div>
       <HeaderNav />
       
       <main className="justify-content-center">
-        <h1> {data} </h1>
+      
+        <Buscador />
+      
+        <div style={{height: "1000px"}}>
+        
+          <h2>Tabla</h2>
+
+          <TableProductos />
+              
+        </div>
+      
+      
       </main>
       
       <FooterNav />
@@ -21,9 +34,9 @@ export default function Home ( {data, error} ) {
   )
 }
 
-Home.getInitialProps = async ctx => {
+Buscar.getInitialProps = async ctx => {
   
-  const endpoint ='/'
+  const endpoint ='/productos/'
 
   try {
     const res = await axios.get(process.env.NEXT_PUBLIC_API+endpoint)

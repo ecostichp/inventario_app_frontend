@@ -4,7 +4,9 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios'
 
-export default function Home( {data, error} ) {
+
+
+export default function wep(  ) {
   
   
   const [usuario, setUsuario] = useState()
@@ -63,19 +65,4 @@ export default function Home( {data, error} ) {
     </main>
   )
 
-}
-
-Home.getInitialProps = async ctx => {
-  
-  const endpoint ='/'
-
-  try {
-    const res = await axios.get(process.env.NEXT_PUBLIC_API+endpoint)
-    const data = res.data
-    return {data}
-  } 
-  catch (error) {
-    return {error}
-  }
-  
 }
