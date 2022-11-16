@@ -5,26 +5,28 @@ import TableProductos from '../components/TableProductos';
 import axios from 'axios'
 
 
-export default function Buscar () {
+export default function Buscar ({data}) {
     
     
   return(
     <div>
-      <HeaderNav />
-      
-      <main className="justify-content-center">
-      
-        <Buscador />
-      
-        <div style={{height: "1000px"}}>
-        
-          <h2>Tabla</h2>
+    
 
-          <TableProductos />
+      <HeaderNav/>
+      <Buscador /> 
+
+      
+      <main style={{position: "static", border: "1px solid"}}>
+      
+          { data ? (
+             
+              <TableProductos data={data}/>  
               
-        </div>
-      
-      
+             
+            )  : <span>Cargando...</span> 
+          }
+            
+         
       </main>
       
       <FooterNav />

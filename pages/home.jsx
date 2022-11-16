@@ -28,6 +28,7 @@ Home.getInitialProps = async ctx => {
   try {
     const res = await axios.get(process.env.NEXT_PUBLIC_API+endpoint)
     const data = res.data
+    console.log('soy dataaa',data)
     return {data}
   } 
   catch (error) {

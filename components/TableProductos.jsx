@@ -1,34 +1,36 @@
 import Table from 'react-bootstrap/Table';
 
 
-export default function TableProductos () {
+export default function TableProductos ({data}) {
     
     
   return(
         
     <div className="p-2">
 
-      <div className="container text-center border border-secondary border-opacity-50 rounded-2">
+      <div >
 
-        <Table className="table table-hover">
+        <Table bordered className="table table-hover">
+
           <thead>
             <tr>
                 <th>Código</th>
                 <th>Descripcion</th>
-                <th>Cantidad</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-                <td>30064</td>
-                <td>Taladro Makita</td>
-                <td>2250</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Rotomartillo</td>
-                <td>5250</td>
-            </tr>
+          { 
+            data.map( ({id, codigo, descripcion}) => {
+                const key = id
+                return (
+                <tr id={key}>
+                  <td>{codigo}</td>
+                  <td>{descripcion}</td>
+                </tr>
+                )
+              })
+          } 
+
           </tbody>
           </Table>
       </div>

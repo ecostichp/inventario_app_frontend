@@ -6,13 +6,14 @@ export default function Buscador () {
     
     
     return(
-      <div className="d-flex align-items-center my-3"
+      <div className="d-flex align-items-center"
       style={{
-        position: "sticky",
+        position: "fixed",
         top: "42px",
         left: "0px",
         right: "0px",
-        backgroundColor: "white",
+        height: "55px",
+        backgroundColor: "blue",
         justifyContent: "center",
 
       }}>

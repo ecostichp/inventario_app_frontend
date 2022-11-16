@@ -6,7 +6,7 @@ export default function HeaderNav () {
       <div className="d-flex align-items-center" 
         style={{
           backgroundColor:"#ededed", 
-          position: "sticky",
+          position: "fixed",
           top: "0px",
           left: "0px",
           right: "0px",
