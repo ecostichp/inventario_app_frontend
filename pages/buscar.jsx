@@ -9,14 +9,14 @@ export default function Buscar ({data}) {
     
     
   return(
-    <div>
+    <div className='d-flex' >
     
 
       <HeaderNav/>
       <Buscador /> 
 
       
-      <main style={{position: "static", border: "1px solid"}}>
+      <main style={{position: "relative", top: "100px"}}>
       
           { data ? (
              

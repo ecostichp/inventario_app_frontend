@@ -5,9 +5,6 @@ export default function TableProductos ({data}) {
     
     
   return(
-        
-    <div className="p-2">
-
       <div >
 
         <Table bordered className="table table-hover">
@@ -34,10 +31,6 @@ export default function TableProductos ({data}) {
           </tbody>
           </Table>
       </div>
-
-    </div>
+  
 )
 } 
-                
-              
-    

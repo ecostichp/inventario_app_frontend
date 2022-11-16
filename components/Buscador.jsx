@@ -13,7 +13,7 @@ export default function Buscador () {
         left: "0px",
         right: "0px",
         height: "55px",
-        backgroundColor: "blue",
+        backgroundColor: "white",
         justifyContent: "center",
 
       }}>
