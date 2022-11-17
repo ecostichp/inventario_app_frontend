@@ -1,37 +1,18 @@
-import HeaderNav from '../page_layouts/HeaderNav';
-import FooterNav from '../page_layouts/FooterNav';
-import Buscador from '../components/Buscador';
-import TableProductos from '../components/TableProductos';
-import axios from 'axios'
+import Search from '../components/Search';
+import TableSearch from '../components/TableSearch';
+import axios from 'axios';
 
 
-export default function Buscar ({data}) {
-    
-    
+export default function Buscar ( {listaProductos} ) {
+   
   return(
     <div className='d-flex' >
-    
 
-      <HeaderNav/>
-      <Buscador /> 
-
-      
-      <main style={{position: "relative", top: "100px"}}>
-      
-          { data ? (
-             
-              <TableProductos data={data}/>  
-              
-             
-            )  : <span>Cargando...</span> 
-          }
-            
+        <Search/> 
+        <TableSearch listaProductos = {listaProductos}/>
          
-      </main>
-      
-      <FooterNav />
-
     </div>
+
 
   )
 }
@@ -42,8 +23,8 @@ Buscar.getInitialProps = async ctx => {
 
   try {
     const res = await axios.get(process.env.NEXT_PUBLIC_API+endpoint)
-    const data = res.data
-    return {data}
+    const listaProductos = res.data
+    return {listaProductos}
   } 
   catch (error) {
     return {error}

@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-export default function Buscador () {
+export default function Search () {
     
+  const [querySearch,setQuerySearch]=useState("")
+
+
     
     return(
+      
       <div className="d-flex align-items-center"
       style={{
         position: "fixed",
@@ -17,6 +22,7 @@ export default function Buscador () {
         justifyContent: "center",
 
       }}>
+
       
           <Form className="d-flex">
           

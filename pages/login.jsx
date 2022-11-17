@@ -55,3 +55,5 @@ export default function LoginFinder () {
 
     )
 }
+
+LoginFinder.getLayout = 'authentication'
