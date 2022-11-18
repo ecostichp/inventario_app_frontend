@@ -5,19 +5,22 @@ import axios from 'axios';
 
 
 export default function Buscar ( {listaProductos} ) {
-   
-  const [querySearch,setQuerySearch]=useState("")
-  const [filterProductos,setfilterProductos]=useState()
+  
+  console.log('componente BUSCAR')
+  console.log('listado de productos',listaProductos)
   
   
+  const [filterProductos,setfilterProductos]=useState([])
+  
+  const propsTableSearch = {listaProductos: listaProductos, 
+                          setfilterProductos: setfilterProductos,
+                          filterProductos: filterProductos}
+
   return(
     <div className='d-flex' >
 
-        <Search props={setQuerySearch} /> 
-        <TableSearch props = {{listaProductos: listaProductos, 
-                              setfilterProductos: setfilterProductos,
-                              filterProductos: filterProductos,
-                              querySearch: querySearch}}/>
+        <Search/> 
+        <TableSearch {...propsTableSearch}/>
          
     </div>
 

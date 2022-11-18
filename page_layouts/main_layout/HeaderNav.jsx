@@ -1,6 +1,5 @@
 export default function HeaderNav () {
     
-    
     return(
       
       <div className="d-flex align-items-center" 

@@ -17,7 +17,7 @@ export default function FooterNav () {
         }}>
         
             <Nav.Item>
-                <Nav.Link href="/home"><i className="bi bi-house-door"></i></Nav.Link>
+                <Nav.Link href="/"><i className="bi bi-house-door"></i></Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/buscar"><i className="bi bi-search"></i></Nav.Link>

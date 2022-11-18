@@ -1,9 +1,13 @@
+import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-export default function Search ({setQuerySearch}) {
+export default function Search () {
     
+  console.log('componente SEARCH')
+
+  const [querySearch, setQuerySearch] = useState("")
 
   const wep = (e) => {
     e.preventDefault()
