@@ -1,14 +1,17 @@
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-export default function Search () {
+export default function Search ({setQuerySearch}) {
     
-  const [querySearch,setQuerySearch]=useState("")
+
+  const wep = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setQuerySearch(e.target.descripcion.value)
+  }
 
 
-    
     return(
       
       <div className="d-flex align-items-center"
@@ -23,22 +26,20 @@ export default function Search () {
 
       }}>
 
-      
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={wep}>
           
-            <Form.Group>
-              <Form.Control type="number" placeholder="Código" aria-label="Search" style={{ fontSize: "0.85rem", width:"75px"}}/>
+            <Form.Group controlId="codigo">
+              <Form.Control type="number" placeholder="Código" style={{ fontSize: "0.85rem", width:"75px"}}/>
             </Form.Group>
           
-            <Form.Group className='ms-2'>
-              <Form.Control type="search" placeholder="Descripción" aria-label="Search" style={{ fontSize: "0.85rem"}}/>
+            <Form.Group className='ms-2' controlId="descripcion">
+              <Form.Control type="search" placeholder="Descripción" style={{ fontSize: "0.85rem"}}/>
             </Form.Group>
-          
-              
-            <Button className='ms-2' variant="outline-primary" style={{ fontSize: "0.85rem"}}>Buscar</Button>
+                        
+            <Button className='ms-2' type="submit" variant="outline-primary" style={{ fontSize: "0.85rem"}}>Buscar</Button>
             
           </Form>
-        
+                  
       </div>
 
     )

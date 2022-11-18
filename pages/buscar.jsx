@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Search from '../components/Search';
 import TableSearch from '../components/TableSearch';
 import axios from 'axios';
@@ -5,11 +6,18 @@ import axios from 'axios';
 
 export default function Buscar ( {listaProductos} ) {
    
+  const [querySearch,setQuerySearch]=useState("")
+  const [filterProductos,setfilterProductos]=useState()
+  
+  
   return(
     <div className='d-flex' >
 
-        <Search/> 
-        <TableSearch listaProductos = {listaProductos}/>
+        <Search props={setQuerySearch} /> 
+        <TableSearch props = {{listaProductos: listaProductos, 
+                              setfilterProductos: setfilterProductos,
+                              filterProductos: filterProductos,
+                              querySearch: querySearch}}/>
          
     </div>
 
