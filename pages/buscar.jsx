@@ -1,26 +1,30 @@
-import { useState, useEffect } from 'react';
 import Search from '../components/Search';
 import TableSearch from '../components/TableSearch';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 
-export default function Buscar ( {listaProductos} ) {
+export default function Buscar () {
+
+  const getInitialProps = (endpoint) => {
+    const [listaProductos, setListaProductos] = useState()
+    const [error, setError] = useState()
+    
+    useEffect(()=>{
+      axios.get(process.env.NEXT_PUBLIC_API+endpoint)
+      .then(listaProductos => setListaProductos(listaProductos))
+      .catch(err => setError(err))
+    })
+  }
   
   console.log('componente BUSCAR')
   console.log('listado de productos',listaProductos)
   
-  
-  const [filterProductos,setfilterProductos]=useState([])
-  
-  const propsTableSearch = {listaProductos: listaProductos, 
-                          setfilterProductos: setfilterProductos,
-                          filterProductos: filterProductos}
-
   return(
     <div className='d-flex' >
 
         <Search/> 
-        <TableSearch {...propsTableSearch}/>
+        <TableSearch listaProductos={listaProductos}/>
          
     </div>
 

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -6,15 +5,16 @@ import Form from 'react-bootstrap/Form';
 export default function Search () {
     
   console.log('componente SEARCH')
+  
 
-  const [querySearch, setQuerySearch] = useState("")
-
-  const wep = (e) => {
+  const onSubmitSearch = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    setQuerySearch(e.target.descripcion.value)
+    let querySearch = e.target.descripcion.value
+    console.log(querySearch)
   }
 
+  
 
     return(
       
@@ -30,7 +30,7 @@ export default function Search () {
 
       }}>
 
-          <Form className="d-flex" onSubmit={wep}>
+          <Form className="d-flex" onSubmit={onSubmitSearch}>
           
             <Form.Group controlId="codigo">
               <Form.Control type="number" placeholder="Código" style={{ fontSize: "0.85rem", width:"75px"}}/>

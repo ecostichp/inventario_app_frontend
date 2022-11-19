@@ -1,26 +1,23 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import useSearch from '../hooks/useSearch';
 
 
-export default function TableSearch ({listaProductos, setfilterProductos, filterProductos}) {
+export default function TableSearch ({listaProductos}) {
+
+  let filterProductos
 
   console.log('componente TABLASEARCH')
-  console.log('array filtrado resultante',filterProductos)
+  
+  const [arrayFiltradoProductos,setArrayFiltradoProductos]=useState([])
+
   
   useEffect( () => {
-    console.log('es el principio del efecto')
-    let querySearch ='bloque'
-    const listaFiltradaProductos = listaProductos.filter(
-      (producto) => {
-      producto.descripcion.toLowerCase().indexOf(querySearch.toLowerCase()) > -1
-      })
-
-    setfilterProductos(listaFiltradaProductos)
-    console.log('retorno del EFECTO',listaFiltradaProductos)
-
-},[]
-)
+    console.log('Soy el efecto de TableSearch')
+    // setfilterProductos(listaFiltradaProductos)
+    },
+    [])
+  
 
   if (filterProductos != undefined) {
 
