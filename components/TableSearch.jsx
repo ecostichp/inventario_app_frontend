@@ -9,11 +9,11 @@ export default function TableSearch ({listaProductos}) {
 
   console.log('componente TABLASEARCH')
   
-  const [arrayFiltradoProductos,setArrayFiltradoProductos]=useState([])
+  // const [arrayFiltradoProductos,setArrayFiltradoProductos]=useState([])
 
   
   useEffect( () => {
-    console.log('Soy el efecto de TableSearch')
+    console.log('Soy el efecto de TableSearch',listaProductos)
     // setfilterProductos(listaFiltradaProductos)
     },
     [])

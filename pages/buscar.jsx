@@ -4,22 +4,10 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 
-export default function Buscar () {
 
-  const getInitialProps = (endpoint) => {
-    const [listaProductos, setListaProductos] = useState()
-    const [error, setError] = useState()
-    
-    useEffect(()=>{
-      axios.get(process.env.NEXT_PUBLIC_API+endpoint)
-      .then(listaProductos => setListaProductos(listaProductos))
-      .catch(err => setError(err))
-    })
-  }
-  
-  console.log('componente BUSCAR')
-  console.log('listado de productos',listaProductos)
-  
+
+export default function Buscar ({listaProductos}) {
+     
   return(
     <div className='d-flex' >
 
@@ -32,16 +20,16 @@ export default function Buscar () {
   )
 }
 
-Buscar.getInitialProps = async ctx => {
+  Buscar.getInitialProps = async ctx => {
   
-  const endpoint ='/productos/'
-
-  try {
-    const res = await axios.get(process.env.NEXT_PUBLIC_API+endpoint)
-    const listaProductos = res.data
-    return {listaProductos}
-  } 
-  catch (error) {
-    return {error}
+    const endpoint ='/productos/'
+  
+    try {
+      const res = await axios.get(process.env.NEXT_PUBLIC_API+endpoint)
+      const listaProductos = res.data
+      return {listaProductos}
+    } 
+    catch (error) {
+      return {error}
+    }
   }
-}

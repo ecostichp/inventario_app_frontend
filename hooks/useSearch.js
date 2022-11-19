@@ -5,8 +5,12 @@ export default function useSearch (listaProductos, querySearch) {
 }
 
 
+  
+// const listaFiltradaProductos = listaProductos.filter(
+//   (producto) => {
+//   producto.descripcion.toLowerCase().indexOf(querySearch.toLowerCase()) > -1
+//   })
 
-const listaFiltradaProductos = listaProductos.filter(
-  (producto) => {
-  producto.descripcion.toLowerCase().indexOf(querySearch.toLowerCase()) > -1
-  })
+
+
+
