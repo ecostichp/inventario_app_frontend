@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
-import useSearch from '../hooks/useSearch';
 
 
-export default function TableSearch ({listaProductos}) {
+
+export default function TableSearch () {
 
   let filterProductos
 
@@ -13,7 +13,7 @@ export default function TableSearch ({listaProductos}) {
 
   
   useEffect( () => {
-    console.log('Soy el efecto de TableSearch',listaProductos)
+    console.log('Soy el efecto de TableSearch')
     // setfilterProductos(listaFiltradaProductos)
     },
     [])

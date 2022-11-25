@@ -7,12 +7,12 @@ import { useEffect, useState } from 'react';
 
 
 export default function Buscar ({listaProductos}) {
-     
+  console.log('Soy Buscar')
   return(
     <div className='d-flex' >
 
-        <Search/> 
-        <TableSearch listaProductos={listaProductos}/>
+        <Search listaProductos={listaProductos}/> 
+        <TableSearch/>
          
     </div>
 

@@ -1,18 +1,34 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import useSearch from '../hooks/useSearch';
+import { useState, useEffect } from 'react';
 
 
-export default function Search () {
+export default function Search ({listaProductos}) {
     
-  console.log('componente SEARCH')
+  console.log('Se renderiza componente SEARCH')
   
+  const [querySearch, setQuerySearch] = useState("")
+  const [listaFiltradaProductos, setListaFiltradaProductos] = useState([])
+  console.log('componente SEARCH', querySearch)
+  console.log('componente SEARCH', listaFiltradaProductos)
 
+
+  
   const onSubmitSearch = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    let querySearch = e.target.descripcion.value
-    console.log(querySearch)
+    setQuerySearch(e.target.descripcion.value)
+    setListaFiltradaProductos(useSearch(listaProductos, querySearch))
   }
+  
+  
+  useEffect(()=>{
+    console.log('soy el efecto de Search', querySearch)
+    
+  },[])
+  
+  
 
   
 
