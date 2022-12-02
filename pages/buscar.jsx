@@ -12,7 +12,7 @@ export default function Buscar ({listaProductos}) {
     <div className='d-flex' >
 
         <Search listaProductos={listaProductos}/> 
-        <TableSearch/>
+        
          
     </div>
 

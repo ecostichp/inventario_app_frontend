@@ -2,15 +2,15 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import useSearch from '../hooks/useSearch';
 import { useState, useEffect } from 'react';
+import Table from 'react-bootstrap/Table';
 
 
 export default function Search ({listaProductos}) {
     
   console.log('Se renderiza componente SEARCH')
   
-  const [querySearch, setQuerySearch] = useState("")
+  
   const [listaFiltradaProductos, setListaFiltradaProductos] = useState([])
-  console.log('componente SEARCH', querySearch)
   console.log('componente SEARCH', listaFiltradaProductos)
 
 
@@ -18,13 +18,13 @@ export default function Search ({listaProductos}) {
   const onSubmitSearch = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    setQuerySearch(e.target.descripcion.value)
+    const querySearch = e.target.descripcion.value
     setListaFiltradaProductos(useSearch(listaProductos, querySearch))
   }
   
   
   useEffect(()=>{
-    console.log('soy el efecto de Search', querySearch)
+    console.log('soy el efecto de Search', listaFiltradaProductos)
     
   },[])
   
@@ -33,6 +33,8 @@ export default function Search ({listaProductos}) {
   
 
     return(
+      <>
+      
       
       <div className="d-flex align-items-center"
       style={{
@@ -61,6 +63,36 @@ export default function Search ({listaProductos}) {
           </Form>
                   
       </div>
+      
+      <div>  
 
+      <div style={{position: "absolute", top: "100px"}} >
+
+      <Table bordered className="table table-hover">
+
+        <thead>
+          <tr>
+              <th>Código</th>
+              <th>Descripcion</th>
+              <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+        { 
+          listaFiltradaProductos.map( ({id, codigo, descripcion}) => 
+              (
+              <tr key={id}>
+                <td>{codigo}</td>
+                <td>{descripcion}</td>
+              </tr>
+              )
+            )
+        } 
+
+        </tbody>
+      </Table>
+      </div>
+</div>
+      </>
     )
 } 
