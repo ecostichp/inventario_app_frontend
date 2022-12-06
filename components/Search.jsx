@@ -66,9 +66,9 @@ export default function Search ({listaProductos}) {
       
       <div>  
 
-      <div style={{position: "absolute", top: "100px"}} >
+      <div style={{position: "fixed", top: "100px"}} >
 
-      <Table bordered className="table table-hover">
+      <Table bordered  style={{height: "530px", width: "356px", display: "block", overflowY: "auto"}}>
 
         <thead>
           <tr>
