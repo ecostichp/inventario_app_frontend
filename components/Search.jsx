@@ -63,14 +63,12 @@ export default function Search ({listaProductos}) {
           </Form>
                   
       </div>
-      
-      <div>  
 
-      <div style={{position: "fixed", top: "100px"}} >
+      <div  style={{top: "100px", width: "356px", height: "520px", overflow: "scroll", position: "absolute",}}>
 
-      <Table bordered  style={{height: "530px", width: "356px", display: "block", overflowY: "auto"}}>
+      <Table bordered className='table table-hover table-sm' style={{display: "inline-block", padding: "8px"}} >
 
-        <thead>
+        <thead className='table-active'>
           <tr>
               <th>Código</th>
               <th>Descripcion</th>
@@ -92,7 +90,7 @@ export default function Search ({listaProductos}) {
         </tbody>
       </Table>
       </div>
-</div>
+
       </>
     )
 } 
