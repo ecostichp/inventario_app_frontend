@@ -1,49 +1,33 @@
-import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
-export default function ModalAgregar() {
-  const [show, setShow] = useState(false);
+export default function ModalAgregar( {show, handleClose, dataModal} ) {
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+      <Modal centered size="sm" show={show} onHide={handleClose}>
+        <Modal.Header style={{justifyContent: "center"}}>
+          <Modal.Title><p className='text-end' style={{fontSize:'1rem', color:'lightgrey'}}>Código {dataModal.codigo}</p>{dataModal.descripcion}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
               <Form.Control
-                type="email"
-                placeholder="name@example.com"
+                type="number"
+                placeholder="Ingresar la cantidad"
                 autoFocus
               />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control as="textarea" rows={3} />
-            </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+        <Modal.Footer style={{justifyContent: "space-between"}}>
+          <Button variant="outline-secondary" onClick={handleClose}>
+            Cancelar
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Agregar
           </Button>
         </Modal.Footer>
       </Modal>
